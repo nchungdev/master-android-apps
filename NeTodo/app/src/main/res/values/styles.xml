@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="actionOverflowMenuStyle">@color/colorAccent</item>
+    </style>
+
+    <style name="ThemeOverlay.MyTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/colorPrimaryTextColor</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextStyle">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="TextStyle.Label"></style>
+
+    <style name="ButtonStyle"></style>
+
+    <style name="ButtonStyle.OnlyText">
+        <item name="android:background">@drawable/ic_add_24dp</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_top_corner</item>
+    </style>
+
+    <style name="TextStyle.Input">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="LargeRedFont">
+        <item name="android:textColor">#C80000</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="ItemListStyle">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:padding">@dimen/fab_margin</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+</resources>
