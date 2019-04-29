@@ -10,19 +10,19 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class SplashViewModel @Inject constructor() : BaseViewModel() {
-    val loading: MutableLiveData<Boolean> = MutableLiveData()
+    val isLoading: MutableLiveData<Boolean> = MutableLiveData()
 
     init {
-        setTimeout(500L)
+        Completable.timer(TIME_SPLASH, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { isLoading.postValue(false) }
+                .doOnComplete { isLoading.postValue(true) }
+                .subscribe()
+                .addTo(compositeDisposable)
     }
 
-    private fun setTimeout(timeout: Long) {
-        Completable.timer(timeout, TimeUnit.MILLISECONDS)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { loading.value = true }
-            .doOnComplete { loading.value = false }
-            .subscribe()
-            .addTo(compositeDisposable)
+    companion object {
+        private const val TIME_SPLASH = 2500L
     }
 }

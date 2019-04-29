@@ -1,68 +1,65 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
-        <item name="actionOverflowMenuStyle">@color/colorAccent</item>
-    </style>
-
-    <style name="ThemeOverlay.MyTheme" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:colorBackground">@color/colorPrimaryTextColor</item>
-        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="TextStyle">
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">16dp</item>
-        <item name="android:layout_margin">8dp</item>
+    <style name="AppTheme.GrayBackground" parent="AppTheme.NoActionBar">
+        <item name="android:background">#FFFFFF</item>
     </style>
 
-    <style name="TextStyle.Label"></style>
-
-    <style name="ButtonStyle"></style>
-
-    <style name="ButtonStyle.OnlyText">
-        <item name="android:background">@drawable/ic_add_24dp</item>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/colorSecondaryTextColor</item>
     </style>
 
-    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolbarStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="popupTheme">@style/ToolbarPopupTheme</item>
+        <item name="theme">@style/ToolbarTheme</item>
+        <item name="titleTextColor">@color/colorSecondaryTextColor</item>
+        <item name="navigationIcon">@drawable/ic_round_menu_24px</item>
     </style>
 
-    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/rounded_top_corner</item>
+    <style name="BottomAppbarStyle">
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
-    <style name="TextStyle.Input">
-        <item name="android:background">@null</item>
+    <style name="ExpandedTitleStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lines">2</item>
+    </style>
+
+    <style name="CollapsedTitleStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+    </style>
+
+    <style name="CollapsedSubtitleStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+    </style>
+
+    <style name="ExpandedSubtitleStyle" parent="TextAppearance.AppCompat.Headline">
         <item name="android:textColor">@color/colorPrimaryTextColor</item>
-        <item name="android:textColorHint">@color/colorPrimaryDark</item>
-
+        <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="LargeRedFont">
-        <item name="android:textColor">#C80000</item>
-        <item name="android:textSize">40sp</item>
-    </style>
-
-    <style name="ItemListStyle">
-        <item name="android:drawablePadding">8dp</item>
-        <item name="android:padding">@dimen/fab_margin</item>
-        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    <style name="ProgressBarStyle">
+        <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 </resources>

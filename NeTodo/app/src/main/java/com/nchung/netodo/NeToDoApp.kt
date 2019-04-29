@@ -1,24 +1,14 @@
 package com.nchung.netodo
 
-import android.app.Activity
-import android.app.Application
-import com.nchung.netodo.di.component.DaggerAppComponent
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import javax.inject.Inject
+import com.nchung.netodo.di.component.AppComponent
+import com.nchung.netodo.di.module.AppModule
+import dagger.android.DaggerApplication
 
-class NeToDoApp : Application(), HasActivityInjector {
-
-    @Inject
-    lateinit var injector: DispatchingAndroidInjector<Activity>
-
-    override fun activityInjector() = injector
-
-    override fun onCreate() {
-        super.onCreate()
-        DaggerAppComponent.builder()
-            .application(this)
+class NeToDoApp : DaggerApplication() {
+    val appComponent: AppComponent = DaggerAppComponent
+            .builder()
+            .appModule(AppModule(this))
             .build()
-            .inject(this)
-    }
+
+    override fun applicationInjector(): AppComponent = appComponent
 }

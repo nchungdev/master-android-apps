@@ -7,6 +7,10 @@
     <color name="colorSecondary">#f44336</color>
     <color name="colorSecondaryLight">#ff7961</color>
     <color name="colorSecondaryDark">#ba000d</color>
-    <color name="colorPrimaryTextColor">#1B3554</color>
+    <color name="colorPrimaryTextColor">#B9BFCA</color>
     <color name="colorSecondaryTextColor">#000000</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="colorBackgroundDark">#F5F5F9</color>
+    <color name="bottom_nv_menu_selected">@color/colorAccent</color>
+    <color name="bottom_nv_menu_default">@color/colorPrimaryDark</color>
 </resources>

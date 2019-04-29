@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_task"
+        android:icon="@drawable/ic_round_home_24px"
+        android:title="@string/action_schedule"
+        app:showAsAction="ifRoom"
+        app:tint="@drawable/menu_items_tint" />
+    <item
+        android:id="@+id/action_calendar"
+        android:icon="@drawable/ic_calendar_24dp"
+        android:title="@string/action_schedule"
+        app:showAsAction="ifRoom"
+        app:tint="@drawable/menu_items_tint" />
+    <item
+        android:id="@+id/action_board"
+        android:icon="@drawable/ic_round_widgets_24px"
+        android:title="@string/action_schedule"
+        app:showAsAction="ifRoom"
+        app:tint="@drawable/menu_items_tint" />
+</menu>

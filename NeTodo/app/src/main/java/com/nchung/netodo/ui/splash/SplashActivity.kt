@@ -1,6 +1,5 @@
 package com.nchung.netodo.ui.splash
 
-import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.nchung.netodo.R
 import com.nchung.netodo.ui.base.BaseActivity
@@ -8,25 +7,10 @@ import com.nchung.netodo.ui.home.HomeActivity
 
 class SplashActivity : BaseActivity<SplashViewModel>() {
 
-    override fun bindViews() {
-
-    }
-
     override fun getLayoutId() = R.layout.activity_splash
 
-    override fun getViewModel(): SplashViewModel = splashViewModel
-
-    private val splashViewModel by lazy(mode = LazyThreadSafetyMode.NONE) {
+    private val viewModel by lazy {
         getViewModel(this, SplashViewModel::class.java)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        getViewModel().loading.observe(this, Observer {
-            if (it) {
-                openMainActivity()
-            }
-        })
     }
 
     private fun openMainActivity() {
@@ -34,5 +18,13 @@ class SplashActivity : BaseActivity<SplashViewModel>() {
         startActivity(intent)
         finish()
         overridePendingTransition(0, android.R.anim.fade_out)
+    }
+
+    override fun bindViews() {
+        viewModel.isLoading.observe(this, Observer {
+            if (it) {
+                openMainActivity()
+            }
+        })
     }
 }

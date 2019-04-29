@@ -1,15 +1,19 @@
 package com.nchung.netodo.di.module
 
+import android.app.Application
 import android.content.Context
 import android.view.LayoutInflater
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
-class AppModule {
+class AppModule(private val application: Application) {
 
     @Provides
-    @Singleton
-    fun provideLayoutInflater(context: Context): LayoutInflater = LayoutInflater.from(context)
+    fun providesContext(): Context {
+        return application.applicationContext
+    }
+
+    @Provides
+    fun providesLayoutInflater(): LayoutInflater = LayoutInflater.from(providesContext())
 }

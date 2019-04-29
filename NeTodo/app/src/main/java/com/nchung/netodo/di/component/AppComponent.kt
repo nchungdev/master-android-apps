@@ -1,30 +1,21 @@
 package com.nchung.netodo.di.component
 
-import android.app.Application
 import com.nchung.netodo.NeToDoApp
-import com.nchung.netodo.di.builder.ActivityBuilder
+import com.nchung.netodo.di.builder.ActivityBindingModule
+import com.nchung.netodo.di.builder.FragmentBindingModule
 import com.nchung.netodo.di.module.AppModule
 import com.nchung.netodo.di.module.ViewModelModule
-import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
-
+@Singleton
 @Component(modules = [
-    AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class,
     AppModule::class,
-    ActivityBuilder::class,
+    ActivityBindingModule::class,
+    FragmentBindingModule::class,
     ViewModelModule::class
 ])
-interface AppComponent {
-
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): AppComponent
-    }
-
-    fun inject(app: NeToDoApp)
-}
+interface AppComponent : AndroidInjector<NeToDoApp>

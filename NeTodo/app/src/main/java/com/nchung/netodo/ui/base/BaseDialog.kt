@@ -11,8 +11,6 @@ abstract class BaseDialog<VM : BaseViewModel> : DialogFragment() {
 
     var baseActivity: BaseActivity<*>? = null
 
-    fun isNetworkConnected() = baseActivity?.isNetworkConnected() ?: false
-
     @LayoutRes
     abstract fun getLayoutId(): Int
 
@@ -24,8 +22,7 @@ abstract class BaseDialog<VM : BaseViewModel> : DialogFragment() {
         super.onAttach(context)
         if (context is BaseActivity<*>) {
             baseActivity = context
-            baseActivity?.onFragmentAttached()
-            baseActivity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+            baseActivity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         }
     }
 
@@ -46,11 +43,6 @@ abstract class BaseDialog<VM : BaseViewModel> : DialogFragment() {
 
     fun dismissDialog() {
         dismiss()
-        baseActivity?.onFragmentDetached(TAG)
-    }
-
-    fun hideKeyboard() {
-        baseActivity?.hideKeyboard()
     }
 
     companion object {
